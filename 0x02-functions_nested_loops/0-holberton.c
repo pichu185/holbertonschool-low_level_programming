@@ -7,7 +7,7 @@
  * Return: Always 0 (Success)
  */
 
-int main (void)
+int main(void)
 {
 putchar('H');
 putchar('o');
@@ -19,5 +19,5 @@ putchar('t');
 putchar('o');
 putchar('n');
 putchar('\n');
-  return (0);
+return (0);
 }
