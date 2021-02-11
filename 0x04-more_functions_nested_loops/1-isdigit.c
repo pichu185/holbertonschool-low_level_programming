@@ -6,16 +6,15 @@
 /**
  * _isdigit - Entry point
  * @c: wopa
- *
- * main - check the code for Holberton School students.
- *
- * Return: Always 0 (Success)
+ * Return: Always
  */
 
 int _isdigit(int c)
 {
-	if ((c >= 0) && (c <= 9))
+	if (c >= 48 && c <= 58)
+	{
 		return (1);
+	}
 	else
 		return (0);
 }
