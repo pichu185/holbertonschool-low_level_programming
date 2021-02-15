@@ -3,7 +3,7 @@
 
 /**
  * reset_to_98 - check the code for Holberton School students.
- *
+ * @n: wopa
  * Return: Always 0.
  */
 
