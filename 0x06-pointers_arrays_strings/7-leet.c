@@ -2,7 +2,8 @@
 
 /**
  * leet - Entry point
- * @str1: abc* Return: Always 0
+ * @str1: abc
+ * Return: Always 0
  */
 
 char *leet(char *str1)
