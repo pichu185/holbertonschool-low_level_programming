@@ -2,25 +2,21 @@
 #include "2-strlen_recursion.c"
 
 /**
- * compare - auxiliar function (recursive).
- * @s: string.
- * @start: position in @s to compare.
- * @end: position in @s to compare.
- * @pos: actual positions.
- * @mid: mid position in s array.
- *
+ * recursion1 - imprime
+ * @s:a
+ * @l:b
+ * @c:c
  * Return: 1 or 0.
  */
-int compare(char *s, int start, int end, int pos, int mid)
-{
-	if ((s[start] == s[end]) && (pos < mid))
-		return (compare(s, start + 1, end - 1, pos + 1, mid));
-	else if (pos > mid)
-		return (1);
-	else
-		return (0);
-}
 
+int recursion1(char *s, int l, int c)
+{
+	if ((*(s + c)) == *(s - c + l - 1) && (c < (l / 2)))
+		return (recursion1((s), l, c + 1));
+	if (c >= (l / 2))
+		return (1);
+	return (0);
+}
 
 /**
  * is_palindrome - returns 1 if a string is a palindrome and 0 if not.
@@ -30,10 +26,7 @@ int compare(char *s, int start, int end, int pos, int mid)
  */
 int is_palindrome(char *s)
 {
-	int pos = 0;
-	int start = 0;
-	int end = _strlen_recursion(s) - 1;
-	int mid = _strlen_recursion(s) / 2;
+	int l = _strlen_recursion(s);
 
-	return (compare(s, start, end, pos, mid));
+	return (recursion1(s, l, 0));
 }
