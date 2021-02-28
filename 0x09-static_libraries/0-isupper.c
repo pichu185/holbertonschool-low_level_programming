@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _isupper - Entry point
  * @c: wopa

@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _puts - check the code for Holberton School students.
  * @s: abc

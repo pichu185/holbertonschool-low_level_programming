@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _memset - prints buffer in hexa
  * @b: the address of memory to print

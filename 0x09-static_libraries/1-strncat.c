@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * *_strncat - check the code for Holberton School students.
  * @src: abc

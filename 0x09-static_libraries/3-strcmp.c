@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _strcmp - check the code for Holberton School students.
  * @s1: abc

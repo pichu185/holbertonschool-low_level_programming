@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * _isdigit - Entry point
  * @c: wopa

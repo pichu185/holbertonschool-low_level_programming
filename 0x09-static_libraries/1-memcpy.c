@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * * _memcpy - prints buffer in hexa
  * @dest: the address of memory to print

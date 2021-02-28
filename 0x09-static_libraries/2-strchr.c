@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  *  _strchr - imprime
  * @c: numero a imprimir
