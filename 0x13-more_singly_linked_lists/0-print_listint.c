@@ -10,11 +10,11 @@ size_t print_listint(const listint_t *h)
 	unsigned int contador = 0;
 	const listint_t *nodo = h;
 
-	while (nodo->next != NULL)
+	while (nodo)
 	{
-		nodo = nodo->next;
 		printf("%d\n", nodo->n);
 		contador = contador + 1;
+		nodo = nodo->next;
 	}
 	return (contador);
 }
