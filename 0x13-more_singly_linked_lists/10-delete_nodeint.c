@@ -29,7 +29,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	idx = index - 1;
 	while (nodo && contador != idx)
 	{
-	        nodo = nodo->next;
+		nodo = nodo->next;
 		contador++;
 	}
 
