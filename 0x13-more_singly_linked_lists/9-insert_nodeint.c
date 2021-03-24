@@ -39,7 +39,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	/* general case */
 	if (contador == index && nodo)
 	{
-		nodo->next = nodo->next;
+		new->next = nodo->next;
 		nodo->next = new;
 		return (new);
 	}
