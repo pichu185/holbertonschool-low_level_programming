@@ -14,28 +14,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buff = malloc(sizeof(char) * letters);
 
 	if (!filename)
-	{
 		return (0);
-	}
-	/* obtengo el file descriptor */
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-	{
 		return (0);
-	}
+	buff = malloc(sizeof(char) * letters);
 	if (buff == NULL)
-	{
 		return (0);
-	}
-	/* leo el archivo */
 	imp = read(fd, buff, letters);
 	if (imp != -1)
 	{
-	/* imprimo caracteres leidos usando write */
-		if (write(2, buff, letters) == -1)
+		if (write(STDOUT_FILENO, buff, letters) == -1)
 			return (0);
 	}
 	free(buff);
 	close(fd);
 	return (imp);
+
 }
