@@ -11,7 +11,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd = 0;
 	ssize_t imp = 0;
-	ssize_t ret = 0;
 	char *buff = malloc(sizeof(char) * letters);
 
 	if (!filename)
@@ -22,18 +21,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		return (-1);
+		return (0);
+	}
+	if (buff == NULL)
+	{
+		return (0);
 	}
 	/* leo el archivo */
 	imp = read(fd, buff, letters);
 	if (imp != -1)
 	{
 	/* imprimo caracteres leidos usando write */
-		ret = write(2, buff, letters);
-		if (ret == -1)
-		{
-			return (-1);
-		}
+		if (write(2, buff, letters) == -1)
+			return (0);
 	}
 	free(buff);
 	close(fd);
