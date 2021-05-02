@@ -7,14 +7,14 @@
  **/
 size_t print_dlistint(const dlistint_t *h)
 {
-	const dlistint_t *node = h;
+	const dlistint_t *nodo = h;
 	size_t contador = 0;
 
-	while (node)
+	while (nodo)
 	{
-		printf("%d\n", node->n);
+		printf("%d\n", nodo->n);
 		contador++;
-		node = node->next;
+		nodo = nodo->next;
 	}
 
 	return (contador);
