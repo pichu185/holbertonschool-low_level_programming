@@ -32,7 +32,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	/* busco posision para insertar */
 	index = idx - 1;
-	while (nodo_nuevo && contador != index)
+	while (nodo_aux && contador != index)
 	{
 		contador++;
 		nodo_aux = nodo_aux->next;
