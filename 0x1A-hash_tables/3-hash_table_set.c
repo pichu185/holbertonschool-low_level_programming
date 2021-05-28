@@ -9,7 +9,7 @@
  **/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *element_node, *aux;
+	hash_node_t *new_element_node, *temporal_node;
 	unsigned long int index;
 
 	if (!ht || !key || !value || *key == '\0')
@@ -19,29 +19,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 
 	/* creating pointer to head of the array */
-	aux = ht->array[index];
+	temporal_node = ht->array[index];
 
-	while (aux)
+	while (temporal_node)
 	{
 		/*checking if the key matches the key in the node*/
-		if (strcmp(key, aux->key) == 0)
+		if (strcmp(key, temporal_node->key) == 0)
 		{
-			free(aux->value);
-			aux->value = strdup(value);
+			free(temporal_node->value);
+			temporal_node->value = strdup(value);
 			return (1);
 		}
 		else
-			aux = aux->next;
+			temporal_node = temporal_node->next;
 	}
 	/* if key was not found, we create a new node */
-	element_node = malloc(sizeof(hash_node_t));
-	if (!element_node)
+	new_element_node = malloc(sizeof(hash_node_t));
+	if (!new_element_node)
 		return (0);
 
-	element_node->key = strdup(key);
-	element_node->value = strdup(value);
+	new_element_node->key = strdup(key);
+	new_element_node->value = strdup(value);
 
-	element_node->next = ht->array[index];
-	ht->array[index] = element_node;
+	new_element_node->next = ht->array[index];
+	ht->array[index] = new_element_node;
 	return (1);
 }
