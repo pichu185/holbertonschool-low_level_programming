@@ -11,12 +11,14 @@
      The island doesnt have lakes
 """
 
+
 def island_perimeter(grid):
-    """function that returns the perimeter of the island described in grid"""
+    """function that returns the perimeter of the island described in grid
+    """
 
     perimeter = 0
     for width in range(len(grid)):
-        for height in range(len(grid([0])):
+        for height in range(len(grid[0])):
             if grid[width][height] == 1:
 
                 if width <= 0:
@@ -26,12 +28,12 @@ def island_perimeter(grid):
 
                 if height <= 0:
                     perimeter += 1
-                            elif grid[width][height - 1] != 1:
+                elif grid[width][height - 1] != 1:
                     perimeter += 1
 
                 if width >= (len(grid) - 1):
                     perimeter += 1
-                            elif grid[width + 1][height] != 1:
+                elif grid[width + 1][height] != 1:
                     perimeter += 1
 
                 if height >= (len(grid[0]) - 1):
